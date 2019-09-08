@@ -12,7 +12,7 @@ app.use(cors());
 app.use(express.json());
 
 // Database connection
-const uri = process.env.MLAB_URI || 'mongodb://benedict:AlpaB3n007@ds251507.mlab.com:51507/heroku_nx4x510s';
+const uri = process.env.MLAB_URI;
 mongoose.connect(uri, { useNewUrlParser: true, useCreateIndex: true });
 
 const connection = mongoose.connection;
@@ -43,3 +43,5 @@ app.listen(port, () => console.log('Server started on port ' + port + '...'));
 npm run dev start
 
 Will open the Express server on port 5000 and React server on port 8080 on local machine. */
+
+module.exports = app;

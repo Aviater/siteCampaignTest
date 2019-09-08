@@ -8,9 +8,12 @@ const Row = props => {
 
 	return (
         <div>
-      		<h1>{props.id} - {props.name}</h1>
-      		{window.location.pathname !== '/' ? <button onClick={GoBack}>Back</button> : <a href={props.id}>View</a>}
-      		<button onClick={() => {props.deleteItem(props.id)}} >Delete</button>
+      		<p className='spRow'>{props.id} - {props.name}</p>
+      		<div className='btn-group'>
+	      		{window.location.pathname !== '/' ? <button className='btn btn-outline-secondary' onClick={GoBack}>Back</button> : <a className='btn btn-outline-info' href={props.id}>View</a>}
+	      		<button className='btn btn-outline-danger' onClick={() => {props.deleteItem(props.id)}} >Delete</button>
+    		</div>
+    		<hr />
     	</div>
 	)
 

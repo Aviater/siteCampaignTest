@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-
 import Row from '../Row/Row';
 
 class ViewItem extends Component {
 
 	constructor(props) {
 		super(props);
+
+		this.deleteItem = this.deleteItem.bind(this);
 
 		this.state = {
 			items: []
@@ -17,12 +18,18 @@ class ViewItem extends Component {
 		axios.get('http://localhost:5000/items/' + this.props.match.params.id)
 			.then(response => {
 				this.setState({
-					items: response.data
+					items: response.data,
 				});
 				console.log(response.data)
 			})
 			.catch(err => console.log('Error: ' + err))
+	}
 
+	deleteItem(id) {
+		axios.delete('http://localhost:5000/items/' + id)
+			.then(res => console.log(res.data));
+
+		window.location.href = '/';
 	}
 
 	itemsList() {
@@ -31,8 +38,9 @@ class ViewItem extends Component {
 
   	render() {
 	    return (
-	    	<div>
+	    	<div className='container'>
 
+	    		<hr />
 		    	{this.itemsList()}
 
 	        </div>

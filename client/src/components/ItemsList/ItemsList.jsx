@@ -3,6 +3,7 @@ import axios from 'axios';
 
 import Row from '../Row/Row';
 import NewItem from '../NewItem/NewItem';
+import Logo from './logo.png';
 
 class ItemsList extends Component {
 
@@ -12,8 +13,8 @@ class ItemsList extends Component {
 		this.deleteItem = this.deleteItem.bind(this);
 
 		this.state = {
-			size:'',
-			items: []
+			items: [],
+			size: ''
 		}
 	}
 
@@ -45,19 +46,20 @@ class ItemsList extends Component {
 				return <Row key={item._id} id={item._id} name={item.name} deleteItem={this.deleteItem} />
 			})
 		} else {
-			return <h1>No items in database</h1>
+			return <p>No items in database</p>
 		}
 	}
 
   	render() {
 	    return (
-	    	<div>
+	    	<div className='container'>
 
-	    		<span>{this.state.size + ' items in database.'}</span>
-
+	    		<h4 className='counter'>{this.state.size + ' items in database.'}</h4>
+				<hr />
 		    	{this.itemsList()}
 
 	        	<NewItem rerenderParentCallback={this.rerenderParentCallback}/>
+	        	<img src={Logo} alt="SiteCampaign Logo" />
 
 	        </div>
 	    )

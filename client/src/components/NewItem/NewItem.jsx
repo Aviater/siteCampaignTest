@@ -10,7 +10,6 @@ class NewItem extends Component {
 
 		this.state = {
 			name: '',
-			size: ''
 		}
 	}
 
@@ -24,7 +23,6 @@ class NewItem extends Component {
 
 		let item = {
 			name: this.state.name,
-			size: this.state.size + 1
 		}
 
 		axios.post('http://localhost:5000/items/add/', item)
@@ -34,9 +32,9 @@ class NewItem extends Component {
 
   	render() {
 	    return (
-	    	<form onSubmit={this.onSubmit.bind(this)}>
-	    		<input type='text' onChange={this.onChangeName}/>
-	    		<input type='submit' value='Add' />
+	    	<form className='input-group mb-3' onSubmit={this.onSubmit.bind(this)}>
+	    		<input className='form-control' type='text' onChange={this.onChangeName}/>
+	    		<input className='btn btn-outline-success' type='submit' value='Add' />
 	    	</form>
 	    )
   	}
