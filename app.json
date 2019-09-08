@@ -1,0 +1,8 @@
+{
+	"name": "SiteCampaign Test",
+	"description": "SiteCampaign test excercise",
+	"repository": "https://github.com/Aviater/siteCampaignTest",
+	"logo": "",
+	"keywords": ["SiteCampaignTest"],
+	"image": "heroku/nodejs"
+}
