@@ -33,7 +33,7 @@ class NewItem extends Component {
   	render() {
 	    return (
 	    	<form className='input-group mb-3' onSubmit={this.onSubmit.bind(this)}>
-	    		<input className='form-control' type='text' onChange={this.onChangeName}/>
+	    		<input placeholder='Insert new item...' className='form-control' type='text' onChange={this.onChangeName}/>
 	    		<input className='btn btn-outline-success' type='submit' value='Add' />
 	    	</form>
 	    )
