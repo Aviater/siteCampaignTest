@@ -14,11 +14,8 @@
   "scripts": {
     "start": "cross-env PORT=8080 react-scripts start",
     "build": "react-scripts build",
-    "test": "mocha",
+    "test": "echo 'Tests not yet implemented' && exit 1",
     "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
   },
   "proxy": "http://localhost:5000",
   "browserslist": {
